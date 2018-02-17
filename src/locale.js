@@ -1,0 +1,9 @@
+exports.us = 'en_US'; //미국
+exports.gb = 'en_GB'; //영국
+exports.vn = 'vi_VN'; //베트남
+exports.ch = 'zh_CN'; //중국 간체
+exports.tw = 'zh_TW'; //타이완 번체
+exports.hk = 'zh_HK'; //홍콩 번체
+exports.th = 'th_TH'; //태국
+exports.id = 'id_ID'; //인도네시아
+exports.ko = 'ko_KR'; //한국
