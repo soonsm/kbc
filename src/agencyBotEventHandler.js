@@ -77,7 +77,7 @@ exports.handlePostback = async function (senderPsid, postback) {
             let payload = postback.payload.split('@@');
             const answer = await db.getAnswer(payload[0], payload[1]);
             const ask = await db.getAsk(answer.askPsid, answer.askDate);
-            fbApi.sendResponseWithButton(senderPsid, '답변 언어를 선택하세요.', [
+            fbApi.sendGenericTemplate(senderPsid, '답변 언어 선택', null, [
                 {
                     type: "postback",
                     title: "답변하기(한글입력)",
@@ -111,8 +111,9 @@ exports.handlePostback = async function (senderPsid, postback) {
                         payload: ask.psid + '@@' + ask.askDate
                     }
                 ], PAGE_ACCESS_TOKEN);
-            } else */if (title === '원본보기') {
-                fbApi.sendResponseWithButton(senderPsid, ask.originalQuestion, [
+            } else */
+            if (title === '원본보기') {
+                fbApi.sendGenericTemplate(senderPsid, '질문 원본', ask.originalQuestion, [
                     {
                         type: "postback",
                         title: "답변하기(한글입력)",
@@ -182,7 +183,7 @@ exports.handleMessage = async function (senderPsid, message) {
 
                     await db.saveAgency(agency);
                     if (await db.saveAnswer(answer)) {
-                        fbApi.sendResponseWithButton(senderPsid, `전달될 답변입니다.\n${answer.translatedAnswer}`, [
+                        fbApi.sendGenericTemplate(senderPsid, '전달 될 답변입니다.', answer.translatedAnswer, [
                             {
                                 type: "postback",
                                 title: "질문자에게 답변 전달하기",

@@ -201,26 +201,30 @@ exports.sendGreetingSetting = async function (greetings, PAGE_ACCESS_TOKEN) {
 };
 
 exports.sendGenericTemplate = async function (psid, title, subtitle, buttons, PAGE_ACCESS_TOKEN) {
-    send({
-        "recipient": {
-            "id": psid
-        },
-        "message": {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [
-                        {
-                            "title": title,
-                            "subtitle": subtitle,
-                            "buttons": buttons
-                        }
-                    ]
+    if(subtitle !== null && subtitle !== undefined && subtitle.length > 80){
+        exports.sendResponseWithButton(psid,`${title}\n${subtitle}`,buttons, PAGE_ACCESS_TOKEN);
+    }else{
+        send({
+            "recipient": {
+                "id": psid
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": title,
+                                "subtitle": subtitle,
+                                "buttons": buttons
+                            }
+                        ]
+                    }
                 }
             }
-        }
-    }, PAGE_ACCESS_TOKEN);
+        }, PAGE_ACCESS_TOKEN);
+    }
 };
 /*
 exports.sendPersistentMenuForAgencyBot = async function (PAGE_ACCESS_TOKEN) {

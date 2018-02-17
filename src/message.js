@@ -208,7 +208,7 @@ exports.showAgencyInfo = function(loc){
         case locale.tw || locale.hk: return '查看答辯者信息';
         case locale.th: return 'การรายงานข้อมูลผู้ตอบ';
         case locale.id: return 'Lihatlah infonya.';
-        case locale.ko: return '답변자 정보보기';
+        case locale.ko: return '답변자 정보 보기';
         default: return 'View the Answer Information';
     }
 };
