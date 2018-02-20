@@ -5,14 +5,19 @@ const
     express = require('express'),
     body_parser = require('body-parser'),
     app = express().use(body_parser.json()), // creates express http server
-    questionBotEventHandler = require('./questionBotEventHandler'),
-    agencyBotEventHandler = require('./agencyBotEventHandler'),
-    httpHandler = require('./httpHandler'),
-    fbApi = require('./fbApi'),
-    message = require('./message');
+    questionBotEventHandler = require('./src/questionBotEventHandler'),
+    agencyBotEventHandler = require('./src/agencyBotEventHandler'),
+    httpHandler = require('./src/httpHandler'),
+    fbApi = require('./src/fbApi'),
+    message = require('./src/message'),
+    path = require('path');
+
 
 const QUESTION_BOT_VERIFY_TOKEN = '2';//"K-BUEATY_CONSULTING-WEBHOOK_ASK_VERIFY_TOKEN";
 const AGENCY_BOT_VERIFY_TOKEN = '1';//"K-BUEATY_CONSULTING-WEBHOOK_AGENCY_VERIFY_TOKEN";
+
+
+app.use(express.static('public'));
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
