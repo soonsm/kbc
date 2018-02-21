@@ -5,11 +5,11 @@ const
     express = require('express'),
     body_parser = require('body-parser'),
     app = express().use(body_parser.json()), // creates express http server
-    questionBotEventHandler = require('../../src/questionBotEventHandler'),
-    agencyBotEventHandler = require('../../src/agencyBotEventHandler'),
-    httpHandler = require('../../src/httpHandler'),
-    fbApi = require('../../src/fbApi'),
-    message = require('../../src/message');
+    questionBotEventHandler = require('./src/questionBotEventHandler'),
+    agencyBotEventHandler = require('./src/agencyBotEventHandler'),
+    httpHandler = require('./src/httpHandler'),
+    fbApi = require('./src/fbApi'),
+    message = require('./src/message');
 
 
 const QUESTION_BOT_VERIFY_TOKEN = '2';//"K-BUEATY_CONSULTING-WEBHOOK_ASK_VERIFY_TOKEN";
