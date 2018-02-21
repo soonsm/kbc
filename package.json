@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./kbc"
+    "start": "node ./bin/www/app"
   },
   "dependencies": {
     "aws-sdk": "^2.192.0",

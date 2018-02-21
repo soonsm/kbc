@@ -5,12 +5,11 @@ const
     express = require('express'),
     body_parser = require('body-parser'),
     app = express().use(body_parser.json()), // creates express http server
-    questionBotEventHandler = require('./src/questionBotEventHandler'),
-    agencyBotEventHandler = require('./src/agencyBotEventHandler'),
-    httpHandler = require('./src/httpHandler'),
-    fbApi = require('./src/fbApi'),
-    message = require('./src/message'),
-    path = require('path');
+    questionBotEventHandler = require('../../src/questionBotEventHandler'),
+    agencyBotEventHandler = require('../../src/agencyBotEventHandler'),
+    httpHandler = require('../../src/httpHandler'),
+    fbApi = require('../../src/fbApi'),
+    message = require('../../src/message');
 
 
 const QUESTION_BOT_VERIFY_TOKEN = '2';//"K-BUEATY_CONSULTING-WEBHOOK_ASK_VERIFY_TOKEN";
@@ -19,8 +18,6 @@ const AGENCY_BOT_VERIFY_TOKEN = '1';//"K-BUEATY_CONSULTING-WEBHOOK_AGENCY_VERIFY
 
 app.use(express.static('public'));
 
-// Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 //질문자 봇 요청 처리
 fbApi.sendStart(message.getStart, questionBotEventHandler.PAGE_ACCESS_TOKEN);
@@ -33,3 +30,7 @@ fbApi.sendStart(message.getStart, agencyBotEventHandler.PAGE_ACCESS_TOKEN);
 fbApi.sendGreetingSetting(message.greeting.agency, agencyBotEventHandler.PAGE_ACCESS_TOKEN);
 app.get('/agency_bot/webhook', httpHandler.getHandler(AGENCY_BOT_VERIFY_TOKEN));
 app.post('/agency_bot/webhook', httpHandler.postHandler(agencyBotEventHandler));
+
+
+// Sets server port and logs message on success
+app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
