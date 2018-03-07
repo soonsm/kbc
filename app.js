@@ -6,7 +6,7 @@ const
     body_parser = require('body-parser'),
     app = express().use(body_parser.json()), // creates express http server
     questionBotEventHandler = require('./src/questionBotEventHandler'),
-    agencyBotEventHandler = require('./src/agencyBot2'),
+    agencyBotEventHandler = require('./src/agencyBotEventHandler'),
     httpHandler = require('./src/httpHandler'),
     fbApi = require('./src/fbApi'),
     message = require('./src/message');

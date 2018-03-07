@@ -69,8 +69,8 @@ exports.nativeLanguage = function(loc){
 
 exports.questionRegistered = function(loc){
     switch(loc){
-        case locale.vn: return 'Câu hỏi đã được đăng ký. Nếu trả lời được câu trả lời thì tôi sẽ cho bạn biết.';
-        case locale.ch: return '已登记提问。 如果登记的话会告诉你的。';
+        case locale.vn: return 'Câu hỏi đã được đăng ký. Nếu bác sĩ trả lời thì tôi sẽ cho biết.';
+        case locale.ch: return '已登记提问。 如果医生回答的话会告诉你的。';
         case locale.tw || locale.hk: return '已登記提問。 如果登記的話會告訴你的。';
         case locale.th: return 'คำถามได้ถูกบันทึกไว้แล้วค่ะ ถ้าคำตอบลงทะเบียนแล้วจะแจ้งให้ทราบค่ะ';
         case locale.id: return 'Pertanyaan telah ditanyakan. Saya akan memberitahu jika jawabannya terdaftar.';
@@ -81,8 +81,8 @@ exports.questionRegistered = function(loc){
 
 exports.cancelResponderFix = function(loc){
     switch(loc){
-        case locale.vn: return 'Chỉ định người trả lời';
-        case locale.ch: return '取消指定答辩者';
+        case locale.vn: return 'Sự huỷ bỏ';
+        case locale.ch: return '取消';
         case locale.tw || locale.hk: return '取消指定答辯者';
         case locale.th: return 'การเพิกถอนคำตอบของผู้มีวิจารณญาณ';
         case locale.id: return 'Pencabutan';
@@ -93,8 +93,8 @@ exports.cancelResponderFix = function(loc){
 
 exports.cancelResponderAck = function(loc){
     switch(loc){
-        case locale.vn: return 'Chỉ định người trả lời đã bị hủy bỏ.';
-        case locale.ch: return '取消指定者被取消。';
+        case locale.vn: return 'Hủy rồi.';
+        case locale.ch: return '取消了。';
         case locale.tw || locale.hk: return '取消指定者被取消。';
         case locale.th: return 'การกำหนดของผู้ตอบถูกยกเลิกแล้วค่ะ';
         case locale.id: return 'Penunjukan calon orang telah dibatalkan.';
@@ -129,7 +129,7 @@ exports.languageSelection = function(loc){
 
 exports.showAnswer = function(loc){
     switch(loc){
-        case locale.vn: return 'Trả lời câu hỏi';
+        case locale.vn: return 'Câu trả lời của bác sĩ';
         case locale.ch: return '查看答辩';
         case locale.tw || locale.hk: return '查看答辯';
         case locale.th: return 'การดูด้วยคำตอบ';
@@ -141,8 +141,8 @@ exports.showAnswer = function(loc){
 
 exports.askAgain = function(loc){
     switch(loc){
-        case locale.vn: return 'Hỏi lại người trả lời câu hỏi này';
-        case locale.ch: return '再次向这个回答者提问';
+        case locale.vn: return 'Tôi sẽ hỏi thêm một lần nữa với bác sĩ này.';
+        case locale.ch: return '再次向这个医生提问。';
         case locale.tw || locale.hk: return '再次向這個回答者提問';
         case locale.th: return 'ย้อนกลับไปหาผู้ตอบคำถาม';
         case locale.id: return 'Tanyakan pada mereka pertanyaan-pertanyaan ini.';
@@ -153,7 +153,7 @@ exports.askAgain = function(loc){
 
 exports.enterAsk = function(loc){
     switch(loc){
-        case locale.vn: return 'Hãy nhập câu hỏi.';
+        case locale.vn: return 'Hãy nhập câu hỏi đi nào.';
         case locale.ch: return '请输入提问。';
         case locale.tw || locale.hk: return '請輸入提問。';
         case locale.th: return 'กรุณากรอกคำถามค่ะ';
@@ -167,8 +167,8 @@ exports.getStart = 'started';
 
 exports.answerArrived = function(loc){
     switch(loc){
-        case locale.vn: return 'Câu trả lời đã đến rồi.\ncâu hỏi\n';
-        case locale.ch: return '回答到了。\n提问\n';
+        case locale.vn: return 'Câu trả lời đã đến rồi.';
+        case locale.ch: return '医生回答了。';
         case locale.tw || locale.hk: return '回答到了。\n提問\n';
         case locale.th: return 'คำตอบมาแล้วครับ\nคำถาม\n';
         case locale.id: return 'Jawabannya datang.\npertanyaan\n';
@@ -203,7 +203,7 @@ exports.answer = function(loc){
 
 exports.showAgencyInfo = function(loc){
     switch(loc){
-        case locale.vn: return 'Xem thông tin người trả lời';
+        case locale.vn: return 'Xem thông tin của bệnh viện';
         case locale.ch: return '查看答辩者信息';
         case locale.tw || locale.hk: return '查看答辯者信息';
         case locale.th: return 'การรายงานข้อมูลผู้ตอบ';
